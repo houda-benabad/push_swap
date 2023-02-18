@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hobenaba <hobenaba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:12:56 by hobenaba          #+#    #+#             */
-/*   Updated: 2023/02/14 13:29:53 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/18 10:14:58 by hobenaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,14 @@ int	main(int ac, char **av)
 		while (av[++check.j])
 		{
 			p = ft_split(av[check.j], ' ');
-			if (p[0] != NULL)
-			{
-				change_to_number(p, &check);
-				ft_check_args(&check, p);
-				ft_push_to_sa(&stack_a, &check, p);
-			}
+			if (p[0] == NULL)
+				ft_error_printer(2);
+			change_to_number(p, &check);
+			if (ft_check_args(&check, p) == 1)
+				return (0);
+			ft_push_to_sa(&stack_a, &check, p);
 			ft_free_p(p, &check);
-		}
+		}	
 		input(&stack_a, &stack_b);
 		ft_check_sorted(stack_a, stack_b);
 	}

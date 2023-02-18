@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hobenaba <hobenaba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:40:52 by hobenaba          #+#    #+#             */
-/*   Updated: 2023/02/14 13:08:02 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/18 10:13:07 by hobenaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ int	main(int ac, char **av)
 		while (av[j])
 		{
 			p = ft_split(av[j], ' ');
-			if (p[0] != NULL)
-			{
-				change_to_number(p, &check);
-				ft_check_args(&check, p);
-				ft_push_to_sa(&stack_a, &check, p);
-				ft_free_p(p, &check);
-			}
+			if (p[0] == NULL)
+				ft_error_printer(2);
+			change_to_number(p, &check);
+			if (ft_check_args(&check, p) == 1)
+				return (0);
+			ft_push_to_sa(&stack_a, &check, p);
+			ft_free_p(p, &check);
 			j++;
 		}
 		ft_sort_lst(&stack_a);

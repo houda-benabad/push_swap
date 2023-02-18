@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hobenaba <hobenaba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:46:53 by hobenaba          #+#    #+#             */
-/*   Updated: 2023/02/14 13:07:33 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/15 17:12:13 by hobenaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct check
 	int	*arr;
 }	t_check;
 
-void	ft_check_args(t_check *check, char **p);
+int		ft_check_args(t_check *check, char **p);
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
@@ -41,7 +41,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	ft_two_args(t_list **stack_a);
 int		ft_three_args(t_list **stack_a);
 void	ft_five_args(t_list **stack_a, t_list **stack_b);
-void	ft_ranked_lst(t_list **stack_a);
+int		ft_ranked_lst(t_list **stack_a);
 void	from_sa_to_sb(t_list **stack_a, t_list **stack_b);
 void	from_sb_to_sa(t_list **stack_a, t_list **stack_b);
 int		get_max_num(t_list *stack_a);
@@ -52,5 +52,4 @@ void	push_from_sb_to_sa(t_list **stack_a, t_list **stack_b, int num);
 int		dst_to_the_wayout(t_list *stack_a, t_list *stack_b);
 void	ft_four_args(t_list **stack_a, t_list **stack_b);
 void	ft_error_printer(int a);
-
 #endif

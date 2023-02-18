@@ -6,7 +6,7 @@
 /*   By: hobenaba <hobenaba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:17:53 by hobenaba          #+#    #+#             */
-/*   Updated: 2023/02/07 10:18:51 by hobenaba         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:43:46 by hobenaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ra(t_list **stack_a)
 {
 	t_list	*tmp;
 
-	if (*stack_a)
+	if (ft_lstsize(*stack_a) > 1)
 	{
 		tmp = (*stack_a);
 		(*stack_a) = (*stack_a)-> next;

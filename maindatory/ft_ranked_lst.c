@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ranked_lst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hobenaba <hobenaba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:49:12 by hobenaba          #+#    #+#             */
-/*   Updated: 2023/02/14 13:08:54 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/15 17:11:53 by hobenaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ft_swap(int *a1, int *a2)
 	*a2 = tmp;
 }
 
-void	ft_ranked_lst(t_list **stack_a)
+int	ft_ranked_lst(t_list **stack_a)
 {
 	int	*str;
 	int	i;
@@ -96,7 +96,7 @@ void	ft_ranked_lst(t_list **stack_a)
 		while (j < ft_lstsize(*stack_a))
 		{
 			if (str[j] == str[i])
-				ft_error_printer(0);
+				ft_error_printer (0);
 			if (str[j] < str[i])
 				ft_swap(&str[i], &str[j]);
 			j++;
@@ -106,4 +106,5 @@ void	ft_ranked_lst(t_list **stack_a)
 	if_to_sort(stack_a, str);
 	ft_str_rank(stack_a, str);
 	free(str);
+	return (0);
 }
